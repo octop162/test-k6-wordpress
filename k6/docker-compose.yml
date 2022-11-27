@@ -1,0 +1,13 @@
+version: '3'
+services:
+  k6:
+    image: grafana/k6
+    volumes:
+      - ./:/home/k6
+    entrypoint: ["/bin/sh"]
+    networks:
+      - wordpress_default
+
+networks:
+  wordpress_default:
+    external: true
